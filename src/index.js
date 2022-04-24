@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { Provider } from 'react-redux';
+import { store } from './Store';
+import { BrowserRouter } from "react-router-dom";
+// nopw we need to wrap our app component inside provider so we can pass the store to it
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // since we are using react StrictMode so we can see console.log twice
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
