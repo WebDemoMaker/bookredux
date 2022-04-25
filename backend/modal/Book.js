@@ -9,6 +9,9 @@ const BookSchema = new Schema({
 	price:{
 		type:String
 	},
+	discount:{
+		type:String
+	},
 	keywords:{
 		type:[]
 	}
